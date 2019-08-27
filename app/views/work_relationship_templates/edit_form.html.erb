@@ -15,7 +15,7 @@
     </label>
 
     <!-- Input for professional_id start -->
-    <input type="text" id="professional_id" name="professional_id" class="form-control" value="<%= @work_relationship.professional_id %>">
+    <%= select_tag(:professional_id, options_from_collection_for_select(Professional.all, :id, :created_at, @work_relationship.professional_id), :class => "form-control") %>
     <!-- Input for professional_id end -->
   </div>
   <!-- Label and input for professional_id end -->
