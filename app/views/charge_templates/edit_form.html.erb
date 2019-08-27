@@ -38,7 +38,7 @@
     </label>
 
     <!-- Input for appointment_id start -->
-    <input type="text" id="appointment_id" name="appointment_id" class="form-control" value="<%= @charge.appointment_id %>">
+    <%= select_tag(:appointment_id, options_from_collection_for_select(Appointment.all, :id, :office_id, @charge.appointment_id), :class => "form-control") %>
     <!-- Input for appointment_id end -->
   </div>
   <!-- Label and input for appointment_id end -->
