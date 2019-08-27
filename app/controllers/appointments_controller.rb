@@ -61,6 +61,30 @@ class AppointmentsController < ApplicationController
     end
   end
 
+  def destroy_row_from_professional
+    @appointment = Appointment.find(params.fetch("id_to_remove"))
+
+    @appointment.destroy
+
+    redirect_to("/professionals/#{@appointment.professional_id}", notice: "Appointment deleted successfully.")
+  end
+
+  def destroy_row_from_office
+    @appointment = Appointment.find(params.fetch("id_to_remove"))
+
+    @appointment.destroy
+
+    redirect_to("/offices/#{@appointment.office_id}", notice: "Appointment deleted successfully.")
+  end
+
+  def destroy_row_from_patient
+    @appointment = Appointment.find(params.fetch("id_to_remove"))
+
+    @appointment.destroy
+
+    redirect_to("/patients/#{@appointment.patient_id}", notice: "Appointment deleted successfully.")
+  end
+
   def destroy_row
     @appointment = Appointment.find(params.fetch("id_to_remove"))
 

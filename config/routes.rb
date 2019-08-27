@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_work_relationship/:id_to_remove", { :controller => "work_relationships", :action => "destroy_row" })
+  get("/delete_work_relationship_from_office/:id_to_remove", { :controller => "work_relationships", :action => "destroy_row_from_office" })
+  get("/delete_work_relationship_from_professional/:id_to_remove", { :controller => "work_relationships", :action => "destroy_row_from_professional" })
 
   #------------------------------
 
@@ -56,6 +58,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_specialization/:id_to_remove", { :controller => "specializations", :action => "destroy_row" })
+  get("/delete_specialization_from_specialty/:id_to_remove", { :controller => "specializations", :action => "destroy_row_from_specialty" })
+  get("/delete_specialization_from_professional/:id_to_remove", { :controller => "specializations", :action => "destroy_row_from_professional" })
 
   #------------------------------
 
@@ -75,6 +79,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_charge/:id_to_remove", { :controller => "charges", :action => "destroy_row" })
+  get("/delete_charge_from_treatment/:id_to_remove", { :controller => "charges", :action => "destroy_row_from_treatment" })
+  get("/delete_charge_from_appointment/:id_to_remove", { :controller => "charges", :action => "destroy_row_from_appointment" })
 
   #------------------------------
 
@@ -94,6 +100,9 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_appointment/:id_to_remove", { :controller => "appointments", :action => "destroy_row" })
+  get("/delete_appointment_from_patient/:id_to_remove", { :controller => "appointments", :action => "destroy_row_from_patient" })
+  get("/delete_appointment_from_office/:id_to_remove", { :controller => "appointments", :action => "destroy_row_from_office" })
+  get("/delete_appointment_from_professional/:id_to_remove", { :controller => "appointments", :action => "destroy_row_from_professional" })
 
   #------------------------------
 

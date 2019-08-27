@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Work Relationships
+
+    <a data-toggle="collapse" href="#professional_work_relationships_new_form">
+      Add work relationship
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @professional.work_relationships.each do |work_relationship| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/work_relationships/<%= work_relationship.id %>">
+          <%= work_relationship.professional_id %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

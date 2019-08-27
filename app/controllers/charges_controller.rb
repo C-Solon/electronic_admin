@@ -57,6 +57,22 @@ class ChargesController < ApplicationController
     end
   end
 
+  def destroy_row_from_appointment
+    @charge = Charge.find(params.fetch("id_to_remove"))
+
+    @charge.destroy
+
+    redirect_to("/appointments/#{@charge.appointment_id}", notice: "Charge deleted successfully.")
+  end
+
+  def destroy_row_from_treatment
+    @charge = Charge.find(params.fetch("id_to_remove"))
+
+    @charge.destroy
+
+    redirect_to("/treatments/#{@charge.treatment_id}", notice: "Charge deleted successfully.")
+  end
+
   def destroy_row
     @charge = Charge.find(params.fetch("id_to_remove"))
 

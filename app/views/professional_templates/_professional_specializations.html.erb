@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Specializations
+
+    <a data-toggle="collapse" href="#professional_specializations_new_form">
+      Add specialization
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @professional.specializations.each do |specialization| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/specializations/<%= specialization.id %>">
+          <%= specialization.professional_id %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

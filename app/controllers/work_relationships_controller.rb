@@ -53,6 +53,22 @@ class WorkRelationshipsController < ApplicationController
     end
   end
 
+  def destroy_row_from_professional
+    @work_relationship = WorkRelationship.find(params.fetch("id_to_remove"))
+
+    @work_relationship.destroy
+
+    redirect_to("/professionals/#{@work_relationship.professional_id}", notice: "WorkRelationship deleted successfully.")
+  end
+
+  def destroy_row_from_office
+    @work_relationship = WorkRelationship.find(params.fetch("id_to_remove"))
+
+    @work_relationship.destroy
+
+    redirect_to("/offices/#{@work_relationship.office_id}", notice: "WorkRelationship deleted successfully.")
+  end
+
   def destroy_row
     @work_relationship = WorkRelationship.find(params.fetch("id_to_remove"))
 

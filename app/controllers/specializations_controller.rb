@@ -53,6 +53,22 @@ class SpecializationsController < ApplicationController
     end
   end
 
+  def destroy_row_from_professional
+    @specialization = Specialization.find(params.fetch("id_to_remove"))
+
+    @specialization.destroy
+
+    redirect_to("/professionals/#{@specialization.professional_id}", notice: "Specialization deleted successfully.")
+  end
+
+  def destroy_row_from_specialty
+    @specialization = Specialization.find(params.fetch("id_to_remove"))
+
+    @specialization.destroy
+
+    redirect_to("/specialties/#{@specialization.specialty_id}", notice: "Specialization deleted successfully.")
+  end
+
   def destroy_row
     @specialization = Specialization.find(params.fetch("id_to_remove"))
 
