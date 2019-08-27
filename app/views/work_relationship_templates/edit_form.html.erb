@@ -1,0 +1,44 @@
+<h1>
+  Edit work relationship #<%= @work_relationship.id %>
+</h1>
+
+<hr>
+
+<!-- Form work_relationship start -->
+<form action="/update_work_relationship/<%= @work_relationship.id %>" method="post">
+<!-- Form work_relationship end -->
+
+  <!-- Label and input for professional_id start -->
+  <div class="form-group">
+    <label for="professional_id">
+      Professional
+    </label>
+
+    <!-- Input for professional_id start -->
+    <input type="text" id="professional_id" name="professional_id" class="form-control" value="<%= @work_relationship.professional_id %>">
+    <!-- Input for professional_id end -->
+  </div>
+  <!-- Label and input for professional_id end -->
+
+  <!-- Label and input for office_id start -->
+  <div class="form-group">
+    <label for="office_id">
+      Office
+    </label>
+
+    <!-- Input for office_id start -->
+    <input type="text" id="office_id" name="office_id" class="form-control" value="<%= @work_relationship.office_id %>">
+    <!-- Input for office_id end -->
+  </div>
+  <!-- Label and input for office_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update work relationship
+  </button>
+</form>
+
+<hr>
+
+<a href="/work_relationships">
+  Go back
+</a>

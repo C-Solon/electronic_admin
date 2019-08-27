@@ -1,0 +1,92 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All work relationships
+    </h1>
+
+    <a href="/work_relationships/new" class="btn btn-block btn-outline-secondary">
+      Add a new work relationship
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Professional
+        </th>
+
+        <th>
+          Office
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @work_relationships.each do |work_relationship| %>
+      <tr>
+        <!-- Display work_relationship.id start -->
+        <td>
+          <%= work_relationship.id %>
+        </td>
+        <!-- Display work_relationship.id end -->
+
+        <!-- Display work_relationship.professional_id start -->
+        <td>
+          <%= work_relationship.professional_id %>
+        </td>
+        <!-- Display work_relationship.professional_id end -->
+
+        <!-- Display work_relationship.office_id start -->
+        <td>
+          <%= work_relationship.office_id %>
+        </td>
+        <!-- Display work_relationship.office_id end -->
+
+        <!-- Display work_relationship.created_at start -->
+        <td>
+          <%= time_ago_in_words(work_relationship.created_at) %> ago
+        </td>
+        <!-- Display work_relationship.created_at end -->
+
+        <!-- Display work_relationship.updated_at start -->
+        <td>
+          <%= time_ago_in_words(work_relationship.updated_at) %> ago
+        </td>
+        <!-- Display work_relationship.updated_at end -->
+
+        <td>
+          <a href="/work_relationships/<%= work_relationship.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

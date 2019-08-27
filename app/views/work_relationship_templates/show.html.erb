@@ -1,0 +1,73 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Work relationship #<%= @work_relationship.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/work_relationships" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link work_relationship start -->
+      <div class="col">
+        <a href="/work_relationships/<%= @work_relationship.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit work relationship
+        </a>
+      </div>
+      <!-- Edit link work_relationship end -->
+
+      <!-- Delete link work_relationship start -->
+      <div class="col">
+        <a href="/delete_work_relationship/<%= @work_relationship.id %>" class="btn btn-block btn-outline-secondary">
+          Delete work relationship
+        </a>
+      </div>
+      <!-- Delete link work_relationship end -->
+    </div>
+
+    <dl>
+      <dt>
+        Professional
+      </dt>
+      <!-- Display professional_id start -->
+      <dd>
+        <%= @work_relationship.professional_id %>
+      </dd>
+      <!-- Display professional_id end -->
+
+      <dt>
+        Office
+      </dt>
+      <!-- Display office_id start -->
+      <dd>
+        <%= @work_relationship.office_id %>
+      </dd>
+      <!-- Display office_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@work_relationship.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@work_relationship.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

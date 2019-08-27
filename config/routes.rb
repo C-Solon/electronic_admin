@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Work relationship resource:
+
+  # CREATE
+  get("/work_relationships/new", { :controller => "work_relationships", :action => "new_form" })
+  post("/create_work_relationship", { :controller => "work_relationships", :action => "create_row" })
+
+  # READ
+  get("/work_relationships", { :controller => "work_relationships", :action => "index" })
+  get("/work_relationships/:id_to_display", { :controller => "work_relationships", :action => "show" })
+
+  # UPDATE
+  get("/work_relationships/:prefill_with_id/edit", { :controller => "work_relationships", :action => "edit_form" })
+  post("/update_work_relationship/:id_to_modify", { :controller => "work_relationships", :action => "update_row" })
+
+  # DELETE
+  get("/delete_work_relationship/:id_to_remove", { :controller => "work_relationships", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Treatment resource:
 
   # CREATE

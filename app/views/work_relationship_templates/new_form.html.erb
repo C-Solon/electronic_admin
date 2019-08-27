@@ -1,0 +1,45 @@
+<h1>
+  Add a new work relationship
+</h1>
+
+
+<hr>
+
+<!-- Form work_relationship start -->
+<form action="/create_work_relationship" method="post">
+<!-- Form work_relationship end -->
+
+  <!-- Label and input for professional_id start -->
+  <div class="form-group">
+    <label for="professional_id">
+      Professional
+    </label>
+
+    <!-- Input for professional_id start -->
+    <input type="text" id="professional_id" name="professional_id" class="form-control">
+    <!-- Input for professional_id end -->
+  </div>
+  <!-- Label and input for professional_id end -->
+
+  <!-- Label and input for office_id start -->
+  <div class="form-group">
+    <label for="office_id">
+      Office
+    </label>
+
+    <!-- Input for office_id start -->
+    <input type="text" id="office_id" name="office_id" class="form-control">
+    <!-- Input for office_id end -->
+  </div>
+  <!-- Label and input for office_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create work relationship
+  </button>
+</form>
+
+<hr>
+
+<a href="/work_relationships">
+  Go back
+</a>
