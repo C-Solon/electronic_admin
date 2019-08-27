@@ -1,0 +1,56 @@
+<!-- Validation failure messages -->
+<% if @specialization.present? %>
+  <% if @specialization.errors.any? %>
+    <% @specialization.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new specialization
+</h1>
+
+
+<hr>
+
+<!-- Form specialization start -->
+<form action="/create_specialization" method="post">
+<!-- Form specialization end -->
+
+  <!-- Label and input for professional_id start -->
+  <div class="form-group">
+    <label for="professional_id">
+      Professional
+    </label>
+
+    <!-- Input for professional_id start -->
+    <input type="text" id="professional_id" name="professional_id" class="form-control" value="<%= @specialization.professional_id %>">
+    <!-- Input for professional_id end -->
+  </div>
+  <!-- Label and input for professional_id end -->
+
+  <!-- Label and input for specialty_id start -->
+  <div class="form-group">
+    <label for="specialty_id">
+      Specialty
+    </label>
+
+    <!-- Input for specialty_id start -->
+    <input type="text" id="specialty_id" name="specialty_id" class="form-control" value="<%= @specialization.specialty_id %>">
+    <!-- Input for specialty_id end -->
+  </div>
+  <!-- Label and input for specialty_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create specialization
+  </button>
+</form>
+
+<hr>
+
+<a href="/specializations">
+  Go back
+</a>

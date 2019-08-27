@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Specialization resource:
+
+  # CREATE
+  get("/specializations/new", { :controller => "specializations", :action => "new_form" })
+  post("/create_specialization", { :controller => "specializations", :action => "create_row" })
+
+  # READ
+  get("/specializations", { :controller => "specializations", :action => "index" })
+  get("/specializations/:id_to_display", { :controller => "specializations", :action => "show" })
+
+  # UPDATE
+  get("/specializations/:prefill_with_id/edit", { :controller => "specializations", :action => "edit_form" })
+  post("/update_specialization/:id_to_modify", { :controller => "specializations", :action => "update_row" })
+
+  # DELETE
+  get("/delete_specialization/:id_to_remove", { :controller => "specializations", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Charge resource:
 
   # CREATE
