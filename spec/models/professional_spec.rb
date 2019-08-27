@@ -4,6 +4,8 @@ RSpec.describe Professional, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:specializations) }
+
     it { should have_many(:appointments) }
 
     end

@@ -1,6 +1,9 @@
 class Professional < ApplicationRecord
   # Direct associations
 
+  has_many   :specializations,
+             :dependent => :destroy
+
   has_many   :appointments,
              :dependent => :destroy
 
