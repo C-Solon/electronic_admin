@@ -1,4 +1,6 @@
 class Professional < ApplicationRecord
+  mount_uploader :picture, PictureUploader
+
   # Direct associations
 
   has_many   :work_relationships,
