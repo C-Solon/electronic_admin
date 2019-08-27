@@ -1,0 +1,32 @@
+<!-- Validation failure messages -->
+<% if @specialty.present? %>
+  <% if @specialty.errors.any? %>
+    <% @specialty.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new specialty
+</h1>
+
+
+<hr>
+
+<!-- Form specialty start -->
+<form action="/create_specialty" method="post">
+<!-- Form specialty end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create specialty
+  </button>
+</form>
+
+<hr>
+
+<a href="/specialties">
+  Go back
+</a>

@@ -1,0 +1,20 @@
+<h1>
+  Edit specialty #<%= @specialty.id %>
+</h1>
+
+<hr>
+
+<!-- Form specialty start -->
+<form action="/update_specialty/<%= @specialty.id %>" method="post">
+<!-- Form specialty end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update specialty
+  </button>
+</form>
+
+<hr>
+
+<a href="/specialties">
+  Go back
+</a>

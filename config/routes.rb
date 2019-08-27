@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Specialty resource:
+
+  # CREATE
+  get("/specialties/new", { :controller => "specialties", :action => "new_form" })
+  post("/create_specialty", { :controller => "specialties", :action => "create_row" })
+
+  # READ
+  get("/specialties", { :controller => "specialties", :action => "index" })
+  get("/specialties/:id_to_display", { :controller => "specialties", :action => "show" })
+
+  # UPDATE
+  get("/specialties/:prefill_with_id/edit", { :controller => "specialties", :action => "edit_form" })
+  post("/update_specialty/:id_to_modify", { :controller => "specialties", :action => "update_row" })
+
+  # DELETE
+  get("/delete_specialty/:id_to_remove", { :controller => "specialties", :action => "destroy_row" })
+
+  #------------------------------
+
   devise_for :offices
   # Routes for the Office resource:
 
