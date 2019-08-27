@@ -1,6 +1,7 @@
 class WorkRelationshipsController < ApplicationController
   def index
-    @work_relationships = WorkRelationship.page(params[:page]).per(10)
+    @q = WorkRelationship.ransack(params[:q])
+    @work_relationships = @q.result(:distinct => true).includes(:professional, :office).page(params[:page]).per(10)
 
     render("work_relationship_templates/index.html.erb")
   end

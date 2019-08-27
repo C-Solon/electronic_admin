@@ -1,6 +1,7 @@
 class SpecialtiesController < ApplicationController
   def index
-    @specialties = Specialty.page(params[:page]).per(10)
+    @q = Specialty.ransack(params[:q])
+    @specialties = @q.result(:distinct => true).includes(:specializations).page(params[:page]).per(10)
 
     render("specialty_templates/index.html.erb")
   end

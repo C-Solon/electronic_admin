@@ -1,6 +1,7 @@
 class ChargesController < ApplicationController
   def index
-    @charges = Charge.page(params[:page]).per(10)
+    @q = Charge.ransack(params[:q])
+    @charges = @q.result(:distinct => true).includes(:appointment, :treatment).page(params[:page]).per(10)
 
     render("charge_templates/index.html.erb")
   end
