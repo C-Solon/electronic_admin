@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "specialties#index"
   # Routes for the Work relationship resource:
 
   # CREATE
