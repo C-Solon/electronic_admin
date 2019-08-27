@@ -1,6 +1,11 @@
 class OfficesController < ApplicationController
   def index
     @offices = Office.all
+    @location_hash = Gmaps4rails.build_markers(@offices.where.not(:address_latitude => nil)) do |office, marker|
+      marker.lat office.address_latitude
+      marker.lng office.address_longitude
+      marker.infowindow "<h5><a href='/offices/#{office.id}'>#{office.name}</a></h5><small>#{office.address_formatted_address}</small>"
+    end
 
     render("office_templates/index.html.erb")
   end

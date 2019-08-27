@@ -36,7 +36,9 @@
       </dt>
       <!-- Display address start -->
       <dd>
-        <%= @office.address %>
+        <div>
+          <%= render partial: "office_templates/one_photo_map" %>
+        </div>
       </dd>
       <!-- Display address end -->
 
