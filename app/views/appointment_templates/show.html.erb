@@ -34,7 +34,11 @@
       </dt>
       <!-- Display office_id start -->
       <dd>
-        <%= @appointment.office_id %>
+        <% if @appointment.office.present? %>
+          <a href="/offices/<%= @appointment.office_id %>">
+            <%= @appointment.office.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display office_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display patient_id start -->
       <dd>
-        <%= @appointment.patient_id %>
+        <% if @appointment.patient.present? %>
+          <a href="/patients/<%= @appointment.patient_id %>">
+            <%= @appointment.patient.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display patient_id end -->
 
@@ -52,7 +60,11 @@
       </dt>
       <!-- Display professional_id start -->
       <dd>
-        <%= @appointment.professional_id %>
+        <% if @appointment.professional.present? %>
+          <a href="/professionals/<%= @appointment.professional_id %>">
+            <%= @appointment.professional.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display professional_id end -->
 

@@ -78,13 +78,21 @@
 
         <!-- Display charge.appointment_id start -->
         <td>
-          <%= charge.appointment.office_id %>
+          <% if charge.appointment.present? %>
+            <a href="/appointments/<%= charge.appointment.id %>">
+              <%= charge.appointment.office_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display charge.appointment_id end -->
 
         <!-- Display charge.treatment_id start -->
         <td>
-          <%= charge.treatment.name %>
+          <% if charge.treatment.present? %>
+            <a href="/treatments/<%= charge.treatment.id %>">
+              <%= charge.treatment.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display charge.treatment_id end -->
 

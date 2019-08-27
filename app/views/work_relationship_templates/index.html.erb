@@ -58,13 +58,21 @@
 
         <!-- Display work_relationship.professional_id start -->
         <td>
-          <%= work_relationship.professional.created_at %>
+          <% if work_relationship.professional.present? %>
+            <a href="/professionals/<%= work_relationship.professional.id %>">
+              <%= work_relationship.professional.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display work_relationship.professional_id end -->
 
         <!-- Display work_relationship.office_id start -->
         <td>
-          <%= work_relationship.office.name %>
+          <% if work_relationship.office.present? %>
+            <a href="/offices/<%= work_relationship.office.id %>">
+              <%= work_relationship.office.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display work_relationship.office_id end -->
 

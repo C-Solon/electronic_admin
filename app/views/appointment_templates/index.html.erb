@@ -74,19 +74,31 @@
 
         <!-- Display appointment.office_id start -->
         <td>
-          <%= appointment.office.name %>
+          <% if appointment.office.present? %>
+            <a href="/offices/<%= appointment.office.id %>">
+              <%= appointment.office.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display appointment.office_id end -->
 
         <!-- Display appointment.patient_id start -->
         <td>
-          <%= appointment.patient.created_at %>
+          <% if appointment.patient.present? %>
+            <a href="/patients/<%= appointment.patient.id %>">
+              <%= appointment.patient.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display appointment.patient_id end -->
 
         <!-- Display appointment.professional_id start -->
         <td>
-          <%= appointment.professional.created_at %>
+          <% if appointment.professional.present? %>
+            <a href="/professionals/<%= appointment.professional.id %>">
+              <%= appointment.professional.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display appointment.professional_id end -->
 

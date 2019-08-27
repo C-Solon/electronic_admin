@@ -58,13 +58,21 @@
 
         <!-- Display specialization.professional_id start -->
         <td>
-          <%= specialization.professional.created_at %>
+          <% if specialization.professional.present? %>
+            <a href="/professionals/<%= specialization.professional.id %>">
+              <%= specialization.professional.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display specialization.professional_id end -->
 
         <!-- Display specialization.specialty_id start -->
         <td>
-          <%= specialization.specialty.created_at %>
+          <% if specialization.specialty.present? %>
+            <a href="/specialties/<%= specialization.specialty.id %>">
+              <%= specialization.specialty.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display specialization.specialty_id end -->
 

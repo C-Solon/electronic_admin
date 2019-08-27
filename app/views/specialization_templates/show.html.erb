@@ -34,7 +34,11 @@
       </dt>
       <!-- Display professional_id start -->
       <dd>
-        <%= @specialization.professional_id %>
+        <% if @specialization.professional.present? %>
+          <a href="/professionals/<%= @specialization.professional_id %>">
+            <%= @specialization.professional.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display professional_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display specialty_id start -->
       <dd>
-        <%= @specialization.specialty_id %>
+        <% if @specialization.specialty.present? %>
+          <a href="/specialties/<%= @specialization.specialty_id %>">
+            <%= @specialization.specialty.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display specialty_id end -->
 

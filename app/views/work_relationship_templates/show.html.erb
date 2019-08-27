@@ -34,7 +34,11 @@
       </dt>
       <!-- Display professional_id start -->
       <dd>
-        <%= @work_relationship.professional_id %>
+        <% if @work_relationship.professional.present? %>
+          <a href="/professionals/<%= @work_relationship.professional_id %>">
+            <%= @work_relationship.professional.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display professional_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display office_id start -->
       <dd>
-        <%= @work_relationship.office_id %>
+        <% if @work_relationship.office.present? %>
+          <a href="/offices/<%= @work_relationship.office_id %>">
+            <%= @work_relationship.office.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display office_id end -->
 

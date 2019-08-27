@@ -52,7 +52,11 @@
       </dt>
       <!-- Display appointment_id start -->
       <dd>
-        <%= @charge.appointment_id %>
+        <% if @charge.appointment.present? %>
+          <a href="/appointments/<%= @charge.appointment_id %>">
+            <%= @charge.appointment.office_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display appointment_id end -->
 
@@ -61,7 +65,11 @@
       </dt>
       <!-- Display treatment_id start -->
       <dd>
-        <%= @charge.treatment_id %>
+        <% if @charge.treatment.present? %>
+          <a href="/treatments/<%= @charge.treatment_id %>">
+            <%= @charge.treatment.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display treatment_id end -->
 
