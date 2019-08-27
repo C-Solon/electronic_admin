@@ -1,6 +1,9 @@
 class Office < ApplicationRecord
   # Direct associations
 
+  has_many   :work_relationships,
+             :dependent => :destroy
+
   has_many   :appointments,
              :dependent => :destroy
 
