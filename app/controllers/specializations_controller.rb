@@ -1,6 +1,6 @@
 class SpecializationsController < ApplicationController
   def index
-    @specializations = Specialization.all
+    @specializations = Specialization.page(params[:page]).per(10)
 
     render("specialization_templates/index.html.erb")
   end

@@ -1,6 +1,6 @@
 class AppointmentsController < ApplicationController
   def index
-    @appointments = Appointment.all
+    @appointments = Appointment.page(params[:page]).per(10)
 
     render("appointment_templates/index.html.erb")
   end

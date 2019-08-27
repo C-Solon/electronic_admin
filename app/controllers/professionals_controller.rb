@@ -1,6 +1,6 @@
 class ProfessionalsController < ApplicationController
   def index
-    @professionals = Professional.all
+    @professionals = Professional.page(params[:page]).per(10)
 
     render("professional_templates/index.html.erb")
   end

@@ -1,6 +1,6 @@
 class WorkRelationshipsController < ApplicationController
   def index
-    @work_relationships = WorkRelationship.all
+    @work_relationships = WorkRelationship.page(params[:page]).per(10)
 
     render("work_relationship_templates/index.html.erb")
   end

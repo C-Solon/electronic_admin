@@ -1,6 +1,6 @@
 class ChargesController < ApplicationController
   def index
-    @charges = Charge.all
+    @charges = Charge.page(params[:page]).per(10)
 
     render("charge_templates/index.html.erb")
   end

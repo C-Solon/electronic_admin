@@ -1,6 +1,6 @@
 class OfficesController < ApplicationController
   def index
-    @offices = Office.all
+    @offices = Office.page(params[:page]).per(10)
     @location_hash = Gmaps4rails.build_markers(@offices.where.not(:address_latitude => nil)) do |office, marker|
       marker.lat office.address_latitude
       marker.lng office.address_longitude
