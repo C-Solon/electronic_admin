@@ -6,6 +6,7 @@ class AppointmentsController < ApplicationController
   end
 
   def show
+    @charge = Charge.new
     @appointment = Appointment.find(params.fetch("id_to_display"))
 
     render("appointment_templates/show.html.erb")

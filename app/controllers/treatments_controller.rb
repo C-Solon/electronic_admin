@@ -6,6 +6,7 @@ class TreatmentsController < ApplicationController
   end
 
   def show
+    @charge = Charge.new
     @treatment = Treatment.find(params.fetch("id_to_display"))
 
     render("treatment_templates/show.html.erb")

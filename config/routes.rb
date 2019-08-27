@@ -47,6 +47,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/specializations/new", { :controller => "specializations", :action => "new_form" })
   post("/create_specialization", { :controller => "specializations", :action => "create_row" })
+  post("/create_specialization_from_specialty", { :controller => "specializations", :action => "create_row_from_specialty" })
 
   # READ
   get("/specializations", { :controller => "specializations", :action => "index" })
@@ -68,6 +69,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/charges/new", { :controller => "charges", :action => "new_form" })
   post("/create_charge", { :controller => "charges", :action => "create_row" })
+  post("/create_charge_from_treatment", { :controller => "charges", :action => "create_row_from_treatment" })
+  post("/create_charge_from_appointment", { :controller => "charges", :action => "create_row_from_appointment" })
 
   # READ
   get("/charges", { :controller => "charges", :action => "index" })

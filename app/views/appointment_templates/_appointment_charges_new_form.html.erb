@@ -1,0 +1,47 @@
+<!-- Form charge start -->
+<form action="/create_charge_from_appointment" method="post">
+<!-- Form charge end -->
+
+  <!-- Label and input for amount start -->
+  <div class="form-group">
+    <label for="amount">
+      Amount
+    </label>
+
+    <!-- Input for amount start -->
+    <input type="text" id="amount" name="amount" class="form-control" value="<%= @charge.amount %>">
+    <!-- Input for amount end -->
+  </div>
+  <!-- Label and input for amount end -->
+
+  <!-- Label and input for paid start -->
+  <div class="form-group">
+    <label for="paid">
+      Paid
+    </label>
+    <!-- Input for paid start -->
+    <input id="paid" class="form-check-input" name="paid" type="checkbox" <%= "checked" if @charge.paid %>>
+    <!-- Input for paid end -->
+  </div>
+
+  <!-- Label and input for appointment_id start -->
+  <!-- Input for appointment_id start -->
+  <input type="hidden" name="appointment_id" value="<%= @appointment.id %>">
+  <!-- Input for appointment_id end -->
+
+  <!-- Label and input for treatment_id start -->
+  <div class="form-group">
+    <label for="treatment_id">
+      Treatment
+    </label>
+
+    <!-- Input for treatment_id start -->
+    <input type="text" id="treatment_id" name="treatment_id" class="form-control" value="<%= @charge.treatment_id %>">
+    <!-- Input for treatment_id end -->
+  </div>
+  <!-- Label and input for treatment_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create charge
+  </button>
+</form>

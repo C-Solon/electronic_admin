@@ -32,6 +32,21 @@ class SpecializationsController < ApplicationController
     end
   end
 
+  def create_row_from_specialty
+    @specialization = Specialization.new
+
+    @specialization.professional_id = params.fetch("professional_id")
+    @specialization.specialty_id = params.fetch("specialty_id")
+
+    if @specialization.valid?
+      @specialization.save
+
+      redirect_to("/specialties/#{@specialization.specialty_id}", notice: "Specialization created successfully.")
+    else
+      render("specialization_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @specialization = Specialization.find(params.fetch("prefill_with_id"))
 

@@ -6,6 +6,7 @@ class SpecialtiesController < ApplicationController
   end
 
   def show
+    @specialization = Specialization.new
     @specialty = Specialty.find(params.fetch("id_to_display"))
 
     render("specialty_templates/show.html.erb")

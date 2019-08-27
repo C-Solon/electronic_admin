@@ -34,6 +34,40 @@ class ChargesController < ApplicationController
     end
   end
 
+  def create_row_from_appointment
+    @charge = Charge.new
+
+    @charge.amount = params.fetch("amount")
+    @charge.paid = params.fetch("paid")
+    @charge.appointment_id = params.fetch("appointment_id")
+    @charge.treatment_id = params.fetch("treatment_id")
+
+    if @charge.valid?
+      @charge.save
+
+      redirect_to("/appointments/#{@charge.appointment_id}", notice: "Charge created successfully.")
+    else
+      render("charge_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_treatment
+    @charge = Charge.new
+
+    @charge.amount = params.fetch("amount")
+    @charge.paid = params.fetch("paid")
+    @charge.appointment_id = params.fetch("appointment_id")
+    @charge.treatment_id = params.fetch("treatment_id")
+
+    if @charge.valid?
+      @charge.save
+
+      redirect_to("/treatments/#{@charge.treatment_id}", notice: "Charge created successfully.")
+    else
+      render("charge_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @charge = Charge.find(params.fetch("prefill_with_id"))
 
