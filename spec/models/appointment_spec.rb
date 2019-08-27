@@ -4,6 +4,8 @@ RSpec.describe Appointment, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:charges) }
+
     it { should belong_to(:patient) }
 
     it { should belong_to(:office) }

@@ -4,6 +4,8 @@ RSpec.describe Charge, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:appointment) }
+
     end
 
     describe "InDirect Associations" do

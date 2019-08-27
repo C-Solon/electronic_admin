@@ -1,6 +1,8 @@
 class Appointment < ApplicationRecord
   # Direct associations
 
+  has_many   :charges
+
   belongs_to :patient,
              :counter_cache => true
 
