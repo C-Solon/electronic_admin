@@ -39,7 +39,7 @@
     </label>
 
     <!-- Input for specialty_id start -->
-    <input type="text" id="specialty_id" name="specialty_id" class="form-control" value="<%= @specialization.specialty_id %>">
+    <%= select_tag(:specialty_id, options_from_collection_for_select(Specialty.all, :id, :created_at, @specialization.specialty_id), :class => "form-control") %>
     <!-- Input for specialty_id end -->
   </div>
   <!-- Label and input for specialty_id end -->
