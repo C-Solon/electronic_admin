@@ -1,6 +1,9 @@
 class Patient < ApplicationRecord
   # Direct associations
 
+  has_many   :appointments,
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
