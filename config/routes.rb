@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Charge resource:
+
+  # CREATE
+  get("/charges/new", { :controller => "charges", :action => "new_form" })
+  post("/create_charge", { :controller => "charges", :action => "create_row" })
+
+  # READ
+  get("/charges", { :controller => "charges", :action => "index" })
+  get("/charges/:id_to_display", { :controller => "charges", :action => "show" })
+
+  # UPDATE
+  get("/charges/:prefill_with_id/edit", { :controller => "charges", :action => "edit_form" })
+  post("/update_charge/:id_to_modify", { :controller => "charges", :action => "update_row" })
+
+  # DELETE
+  get("/delete_charge/:id_to_remove", { :controller => "charges", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Appointment resource:
 
   # CREATE

@@ -1,0 +1,79 @@
+<!-- Validation failure messages -->
+<% if @charge.present? %>
+  <% if @charge.errors.any? %>
+    <% @charge.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new charge
+</h1>
+
+
+<hr>
+
+<!-- Form charge start -->
+<form action="/create_charge" method="post">
+<!-- Form charge end -->
+
+  <!-- Label and input for amount start -->
+  <div class="form-group">
+    <label for="amount">
+      Amount
+    </label>
+
+    <!-- Input for amount start -->
+    <input type="text" id="amount" name="amount" class="form-control" value="<%= @charge.amount %>">
+    <!-- Input for amount end -->
+  </div>
+  <!-- Label and input for amount end -->
+
+  <!-- Label and input for paid start -->
+  <div class="form-check">
+    <input type="hidden" value="0" name="paid">
+    <!-- Input for paid start -->
+    <input id="paid" class="form-check-input" name="paid" type="checkbox" <%= "checked" if @charge.paid %>>
+    <!-- Input for paid end -->
+    <label for="paid" class="form-check-label">
+      Paid
+    </label>
+  </div>
+
+  <!-- Label and input for appointment_id start -->
+  <div class="form-group">
+    <label for="appointment_id">
+      Appointment
+    </label>
+
+    <!-- Input for appointment_id start -->
+    <input type="text" id="appointment_id" name="appointment_id" class="form-control" value="<%= @charge.appointment_id %>">
+    <!-- Input for appointment_id end -->
+  </div>
+  <!-- Label and input for appointment_id end -->
+
+  <!-- Label and input for treatment_id start -->
+  <div class="form-group">
+    <label for="treatment_id">
+      Treatment
+    </label>
+
+    <!-- Input for treatment_id start -->
+    <input type="text" id="treatment_id" name="treatment_id" class="form-control" value="<%= @charge.treatment_id %>">
+    <!-- Input for treatment_id end -->
+  </div>
+  <!-- Label and input for treatment_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create charge
+  </button>
+</form>
+
+<hr>
+
+<a href="/charges">
+  Go back
+</a>
