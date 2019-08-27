@@ -1,0 +1,32 @@
+<h1>
+  Edit treatment #<%= @treatment.id %>
+</h1>
+
+<hr>
+
+<!-- Form treatment start -->
+<form action="/update_treatment/<%= @treatment.id %>" method="post">
+<!-- Form treatment end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @treatment.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update treatment
+  </button>
+</form>
+
+<hr>
+
+<a href="/treatments">
+  Go back
+</a>
