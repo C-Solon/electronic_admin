@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  devise_for :offices
+  # Routes for the Office resource:
+
+  # READ
+  get("/offices", { :controller => "offices", :action => "index" })
+  get("/offices/:id_to_display", { :controller => "offices", :action => "show" })
+
+  #------------------------------
+
   devise_for :professionals
   # Routes for the Professional resource:
 
