@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @specialization.present? %>
   <% if @specialization.errors.any? %>
     <% @specialization.errors.full_messages.each do |message| %>
@@ -16,33 +15,23 @@
 
 <hr>
 
-<!-- Form specialization start -->
 <form action="/create_specialization" method="post">
-<!-- Form specialization end -->
 
-  <!-- Label and input for professional_id start -->
   <div class="form-group">
     <label for="professional_id">
       Professional
     </label>
 
-    <!-- Input for professional_id start -->
     <%= select_tag(:professional_id, options_from_collection_for_select(Professional.all, :id, :created_at, @specialization.professional_id), :class => "form-control") %>
-    <!-- Input for professional_id end -->
   </div>
-  <!-- Label and input for professional_id end -->
 
-  <!-- Label and input for specialty_id start -->
   <div class="form-group">
     <label for="specialty_id">
       Specialty
     </label>
 
-    <!-- Input for specialty_id start -->
     <%= select_tag(:specialty_id, options_from_collection_for_select(Specialty.all, :id, :created_at, @specialization.specialty_id), :class => "form-control") %>
-    <!-- Input for specialty_id end -->
   </div>
-  <!-- Label and input for specialty_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create specialization

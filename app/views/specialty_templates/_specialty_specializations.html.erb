@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @specialty.specializations.each do |specialization| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/specializations/<%= specialization.id %>">
           <%= specialization.professional_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_specialization_from_specialty/<%= specialization.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="specialty_specializations_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "specialty_templates/specialty_specializations_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

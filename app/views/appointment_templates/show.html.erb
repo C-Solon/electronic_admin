@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link appointment start -->
       <div class="col">
         <a href="/appointments/<%= @appointment.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit appointment
         </a>
       </div>
-      <!-- Edit link appointment end -->
 
-      <!-- Delete link appointment start -->
       <div class="col">
         <a href="/delete_appointment/<%= @appointment.id %>" class="btn btn-block btn-outline-secondary">
           Delete appointment
         </a>
       </div>
-      <!-- Delete link appointment end -->
     </div>
 
     <dl>
       <dt>
         Office
       </dt>
-      <!-- Display office_id start -->
       <dd>
         <% if @appointment.office.present? %>
           <a href="/offices/<%= @appointment.office_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display office_id end -->
 
       <dt>
         Patient
       </dt>
-      <!-- Display patient_id start -->
       <dd>
         <% if @appointment.patient.present? %>
           <a href="/patients/<%= @appointment.patient_id %>">
@@ -53,12 +46,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display patient_id end -->
 
       <dt>
         Professional
       </dt>
-      <!-- Display professional_id start -->
       <dd>
         <% if @appointment.professional.present? %>
           <a href="/professionals/<%= @appointment.professional_id %>">
@@ -66,60 +57,47 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display professional_id end -->
 
       <dt>
         Charge
       </dt>
-      <!-- Display charge_id start -->
       <dd>
         <%= @appointment.charge_id %>
       </dd>
-      <!-- Display charge_id end -->
 
       <dt>
         Notes
       </dt>
-      <!-- Display notes start -->
       <dd>
         <%= @appointment.notes %>
       </dd>
-      <!-- Display notes end -->
 
       <dt>
         Time slot
       </dt>
-      <!-- Display time_slot start -->
       <dd>
         <%= @appointment.time_slot %>
       </dd>
-      <!-- Display time_slot end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@appointment.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@appointment.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "appointment_templates/appointment_charges" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

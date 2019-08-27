@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 <div class="row mb-3">
   <div class="col-md-12">
     <%= render partial: "office_templates/all_photos_map" %>
   </div>
 </div>
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -70,59 +66,41 @@
 
       <% @offices.each do |office| %>
       <tr>
-        <!-- Display office.id start -->
         <td>
           <%= office.id %>
         </td>
-        <!-- Display office.id end -->
 
-        <!-- Display office.name start -->
         <td>
           <%= office.name %>
         </td>
-        <!-- Display office.name end -->
 
-        <!-- Display office.address start -->
         <td>
           <%= office.address %>
         </td>
-        <!-- Display office.address end -->
 
-        <!-- Display office.phone_number start -->
         <td>
           <%= office.phone_number %>
         </td>
-        <!-- Display office.phone_number end -->
 
-        <!-- Display office.logo start -->
         <td>
           <img src='<%= office.logo %>' class='img-fluid'>
         </td>
-        <!-- Display office.logo end -->
 
-        <!-- Display office.email start -->
         <td>
           <%= office.email %>
         </td>
-        <!-- Display office.email end -->
 
-        <!-- Display office.password start -->
         <td>
           <%= office.password %>
         </td>
-        <!-- Display office.password end -->
 
-        <!-- Display office.created_at start -->
         <td>
           <%= time_ago_in_words(office.created_at) %> ago
         </td>
-        <!-- Display office.created_at end -->
 
-        <!-- Display office.updated_at start -->
         <td>
           <%= time_ago_in_words(office.updated_at) %> ago
         </td>
-        <!-- Display office.updated_at end -->
 
         <td>
           <a href="/offices/<%= office.id %>">

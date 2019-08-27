@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link work_relationship start -->
       <div class="col">
         <a href="/work_relationships/<%= @work_relationship.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit work relationship
         </a>
       </div>
-      <!-- Edit link work_relationship end -->
 
-      <!-- Delete link work_relationship start -->
       <div class="col">
         <a href="/delete_work_relationship/<%= @work_relationship.id %>" class="btn btn-block btn-outline-secondary">
           Delete work relationship
         </a>
       </div>
-      <!-- Delete link work_relationship end -->
     </div>
 
     <dl>
       <dt>
         Professional
       </dt>
-      <!-- Display professional_id start -->
       <dd>
         <% if @work_relationship.professional.present? %>
           <a href="/professionals/<%= @work_relationship.professional_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display professional_id end -->
 
       <dt>
         Office
       </dt>
-      <!-- Display office_id start -->
       <dd>
         <% if @work_relationship.office.present? %>
           <a href="/offices/<%= @work_relationship.office_id %>">
@@ -53,28 +46,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display office_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@work_relationship.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@work_relationship.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

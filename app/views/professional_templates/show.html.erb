@@ -11,13 +11,11 @@
         </a>
       </div>
 
-      <!-- Edit link professional start -->
       <div class="col">
         <a href="/professionals/<%= @professional.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit professional
         </a>
       </div>
-      <!-- Edit link professional end -->
 
     </div>
 
@@ -25,79 +23,62 @@
       <dt>
         First name
       </dt>
-      <!-- Display first_name start -->
       <dd>
         <%= @professional.first_name %>
       </dd>
-      <!-- Display first_name end -->
 
       <dt>
         Last name
       </dt>
-      <!-- Display last_name start -->
       <dd>
         <%= @professional.last_name %>
       </dd>
-      <!-- Display last_name end -->
 
       <dt>
         Phone number
       </dt>
-      <!-- Display phone_number start -->
       <dd>
         <%= @professional.phone_number %>
       </dd>
-      <!-- Display phone_number end -->
 
       <dt>
         Picture
       </dt>
-      <!-- Display picture start -->
       <dd>
         <img src="<%= @professional.picture %>" class="img-fluid">
       </dd>
-      <!-- Display picture end -->
 
       <dt>
         Email
       </dt>
-      <!-- Display email start -->
       <dd>
         <%= @professional.email %>
       </dd>
-      <!-- Display email end -->
 
       <dt>
         Password
       </dt>
-      <!-- Display password start -->
       <dd>
         <%= @professional.password %>
       </dd>
-      <!-- Display password end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@professional.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@professional.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "professional_templates/professional_appointments" %>
@@ -115,4 +96,3 @@
     <%= render partial: "professional_templates/professional_work_relationships" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

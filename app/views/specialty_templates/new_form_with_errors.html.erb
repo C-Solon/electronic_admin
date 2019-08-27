@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @specialty.present? %>
   <% if @specialty.errors.any? %>
     <% @specialty.errors.full_messages.each do |message| %>
@@ -16,9 +15,7 @@
 
 <hr>
 
-<!-- Form specialty start -->
 <form action="/create_specialty" method="post">
-<!-- Form specialty end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create specialty

@@ -10,11 +10,9 @@
   <ul class="list-group list-group-flush">
     <% @office.work_relationships.each do |work_relationship| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/work_relationships/<%= work_relationship.id %>">
           <%= work_relationship.professional_id %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

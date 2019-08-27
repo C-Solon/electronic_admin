@@ -1,23 +1,14 @@
-<!-- Form specialization start -->
 <form action="/create_specialization_from_specialty" method="post">
-<!-- Form specialization end -->
 
-  <!-- Label and input for professional_id start -->
   <div class="form-group">
     <label for="professional_id">
       Professional
     </label>
 
-    <!-- Input for professional_id start -->
     <%= select_tag(:professional_id, options_from_collection_for_select(Professional.all, :id, :created_at, @specialization.professional_id), :class => "form-control") %>
-    <!-- Input for professional_id end -->
   </div>
-  <!-- Label and input for professional_id end -->
 
-  <!-- Label and input for specialty_id start -->
-  <!-- Input for specialty_id start -->
   <input type="hidden" name="specialty_id" value="<%= @specialty.id %>">
-  <!-- Input for specialty_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create specialization

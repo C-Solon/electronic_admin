@@ -11,46 +11,37 @@
         </a>
       </div>
 
-      <!-- Edit link charge start -->
       <div class="col">
         <a href="/charges/<%= @charge.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit charge
         </a>
       </div>
-      <!-- Edit link charge end -->
 
-      <!-- Delete link charge start -->
       <div class="col">
         <a href="/delete_charge/<%= @charge.id %>" class="btn btn-block btn-outline-secondary">
           Delete charge
         </a>
       </div>
-      <!-- Delete link charge end -->
     </div>
 
     <dl>
       <dt>
         Amount
       </dt>
-      <!-- Display amount start -->
       <dd>
         <%= @charge.amount %>
       </dd>
-      <!-- Display amount end -->
 
       <dt>
         Paid
       </dt>
-      <!-- Display paid start -->
       <dd>
         <%= @charge.paid %>
       </dd>
-      <!-- Display paid end -->
 
       <dt>
         Appointment
       </dt>
-      <!-- Display appointment_id start -->
       <dd>
         <% if @charge.appointment.present? %>
           <a href="/appointments/<%= @charge.appointment_id %>">
@@ -58,12 +49,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display appointment_id end -->
 
       <dt>
         Treatment
       </dt>
-      <!-- Display treatment_id start -->
       <dd>
         <% if @charge.treatment.present? %>
           <a href="/treatments/<%= @charge.treatment_id %>">
@@ -71,28 +60,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display treatment_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@charge.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@charge.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

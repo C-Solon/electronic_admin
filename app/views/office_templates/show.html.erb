@@ -11,13 +11,11 @@
         </a>
       </div>
 
-      <!-- Edit link office start -->
       <div class="col">
         <a href="/offices/<%= @office.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit office
         </a>
       </div>
-      <!-- Edit link office end -->
 
     </div>
 
@@ -25,81 +23,64 @@
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @office.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Address
       </dt>
-      <!-- Display address start -->
       <dd>
         <div>
           <%= render partial: "office_templates/one_photo_map" %>
         </div>
       </dd>
-      <!-- Display address end -->
 
       <dt>
         Phone number
       </dt>
-      <!-- Display phone_number start -->
       <dd>
         <%= @office.phone_number %>
       </dd>
-      <!-- Display phone_number end -->
 
       <dt>
         Logo
       </dt>
-      <!-- Display logo start -->
       <dd>
         <img src="<%= @office.logo %>" class="img-fluid">
       </dd>
-      <!-- Display logo end -->
 
       <dt>
         Email
       </dt>
-      <!-- Display email start -->
       <dd>
         <%= @office.email %>
       </dd>
-      <!-- Display email end -->
 
       <dt>
         Password
       </dt>
-      <!-- Display password start -->
       <dd>
         <%= @office.password %>
       </dd>
-      <!-- Display password end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@office.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@office.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "office_templates/office_appointments" %>
@@ -111,4 +92,3 @@
     <%= render partial: "office_templates/office_work_relationships" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

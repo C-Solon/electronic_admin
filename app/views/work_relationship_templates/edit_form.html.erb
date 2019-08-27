@@ -4,33 +4,23 @@
 
 <hr>
 
-<!-- Form work_relationship start -->
 <form action="/update_work_relationship/<%= @work_relationship.id %>" method="post">
-<!-- Form work_relationship end -->
 
-  <!-- Label and input for professional_id start -->
   <div class="form-group">
     <label for="professional_id">
       Professional
     </label>
 
-    <!-- Input for professional_id start -->
     <%= select_tag(:professional_id, options_from_collection_for_select(Professional.all, :id, :created_at, @work_relationship.professional_id), :class => "form-control") %>
-    <!-- Input for professional_id end -->
   </div>
-  <!-- Label and input for professional_id end -->
 
-  <!-- Label and input for office_id start -->
   <div class="form-group">
     <label for="office_id">
       Office
     </label>
 
-    <!-- Input for office_id start -->
     <%= select_tag(:office_id, options_from_collection_for_select(Office.all, :id, :name, @work_relationship.office_id), :class => "form-control") %>
-    <!-- Input for office_id end -->
   </div>
-  <!-- Label and input for office_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update work relationship
