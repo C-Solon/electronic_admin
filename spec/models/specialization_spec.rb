@@ -4,6 +4,8 @@ RSpec.describe Specialization, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:specialty) }
+
     it { should belong_to(:professional) }
 
     end
