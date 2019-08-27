@@ -1,0 +1,104 @@
+<!-- Validation failure messages -->
+<% if @appointment.present? %>
+  <% if @appointment.errors.any? %>
+    <% @appointment.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new appointment
+</h1>
+
+
+<hr>
+
+<!-- Form appointment start -->
+<form action="/create_appointment" method="post">
+<!-- Form appointment end -->
+
+  <!-- Label and input for office_id start -->
+  <div class="form-group">
+    <label for="office_id">
+      Office
+    </label>
+
+    <!-- Input for office_id start -->
+    <input type="text" id="office_id" name="office_id" class="form-control" value="<%= @appointment.office_id %>">
+    <!-- Input for office_id end -->
+  </div>
+  <!-- Label and input for office_id end -->
+
+  <!-- Label and input for patient_id start -->
+  <div class="form-group">
+    <label for="patient_id">
+      Patient
+    </label>
+
+    <!-- Input for patient_id start -->
+    <input type="text" id="patient_id" name="patient_id" class="form-control" value="<%= @appointment.patient_id %>">
+    <!-- Input for patient_id end -->
+  </div>
+  <!-- Label and input for patient_id end -->
+
+  <!-- Label and input for professional_id start -->
+  <div class="form-group">
+    <label for="professional_id">
+      Professional
+    </label>
+
+    <!-- Input for professional_id start -->
+    <input type="text" id="professional_id" name="professional_id" class="form-control" value="<%= @appointment.professional_id %>">
+    <!-- Input for professional_id end -->
+  </div>
+  <!-- Label and input for professional_id end -->
+
+  <!-- Label and input for charge_id start -->
+  <div class="form-group">
+    <label for="charge_id">
+      Charge
+    </label>
+
+    <!-- Input for charge_id start -->
+    <input type="text" id="charge_id" name="charge_id" class="form-control" value="<%= @appointment.charge_id %>">
+    <!-- Input for charge_id end -->
+  </div>
+  <!-- Label and input for charge_id end -->
+
+  <!-- Label and input for notes start -->
+  <div class="form-group">
+    <label for="notes">
+      Notes
+    </label>
+
+    <!-- Input for notes start -->
+    <textarea id="notes" name="notes" class="form-control" rows="3"><%= @appointment.notes %></textarea>
+    <!-- Input for notes end -->
+  </div>
+  <!-- Label and input for notes end -->
+
+  <!-- Label and input for time_slot start -->
+  <div class="form-group">
+    <label for="time_slot">
+      Time slot
+    </label>
+
+    <!-- Input for time_slot start -->
+    <input type="text" id="time_slot" name="time_slot" class="form-control" value="<%= @appointment.time_slot %>">
+    <!-- Input for time_slot end -->
+  </div>
+  <!-- Label and input for time_slot end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create appointment
+  </button>
+</form>
+
+<hr>
+
+<a href="/appointments">
+  Go back
+</a>
