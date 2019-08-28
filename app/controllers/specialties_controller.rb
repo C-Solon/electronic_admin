@@ -22,6 +22,7 @@ class SpecialtiesController < ApplicationController
   def create_row
     @specialty = Specialty.new
 
+    @specialty.name = params.fetch("name")
 
     if @specialty.valid?
       @specialty.save
@@ -41,6 +42,7 @@ class SpecialtiesController < ApplicationController
   def update_row
     @specialty = Specialty.find(params.fetch("id_to_modify"))
 
+    @specialty.name = params.fetch("name")
 
     if @specialty.valid?
       @specialty.save

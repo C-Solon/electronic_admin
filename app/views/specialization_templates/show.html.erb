@@ -42,7 +42,7 @@
       <dd>
         <% if @specialization.specialty.present? %>
           <a href="/specialties/<%= @specialization.specialty_id %>">
-            <%= @specialization.specialty.created_at %>
+            <%= @specialization.specialty.name %>
           </a>
         <% end %>
       </dd>

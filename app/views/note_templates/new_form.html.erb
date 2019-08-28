@@ -1,0 +1,43 @@
+<h1>
+  Add a new note
+</h1>
+
+
+<hr>
+
+<form action="/create_note" method="post" enctype="multipart/form-data">
+
+  <div class="form-group">
+    <label for="treatment_id">
+      Treatment
+    </label>
+
+    <%= select_tag(:treatment_id, options_from_collection_for_select(Treatment.all, :id, :name, @note.treatment_id), :class => "form-control") %>
+  </div>
+
+  <div class="form-group">
+    <label for="photo">
+      Photo
+    </label>
+
+    <input type="file" id="photo" name="photo" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="comments">
+      Comments
+    </label>
+
+    <textarea id="comments" name="comments" class="form-control" rows="3"></textarea>
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create note
+  </button>
+</form>
+
+<hr>
+
+<a href="/notes">
+  Go back
+</a>
