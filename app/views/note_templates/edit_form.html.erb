@@ -1,0 +1,43 @@
+<h1>
+  Edit note #<%= @note.id %>
+</h1>
+
+<hr>
+
+<form action="/update_note/<%= @note.id %>" method="post" enctype="multipart/form-data">
+
+  <div class="form-group">
+    <label for="treatment_id">
+      Treatment
+    </label>
+
+    <%= select_tag(:treatment_id, options_from_collection_for_select(Treatment.all, :id, :name, @note.treatment_id), :class => "form-control") %>
+  </div>
+
+  <div class="form-group">
+    <label for="photo">
+      Photo
+    </label>
+
+    <%= cl_image_tag(@note.photo.to_s, :width => 90, :height => 90, :crop => :thumb) %>
+    <input type="file" id="photo" name="photo" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="comments">
+      Comments
+    </label>
+
+    <textarea id="comments" name="comments" class="form-control" rows="3"><%= @note.comments %></textarea>
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update note
+  </button>
+</form>
+
+<hr>
+
+<a href="/notes">
+  Go back
+</a>

@@ -6,6 +6,14 @@
 
 <form action="/update_specialty/<%= @specialty.id %>" method="post">
 
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <textarea id="name" name="name" class="form-control" rows="3"><%= @specialty.name %></textarea>
+  </div>
+
   <button class="btn btn-block btn-outline-secondary">
     Update specialty
   </button>

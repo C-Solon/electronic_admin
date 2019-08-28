@@ -1,12 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe Treatment, type: :model do
+RSpec.describe Note, type: :model do
   
     describe "Direct Associations" do
 
-    it { should have_many(:notes) }
-
-    it { should have_many(:charges) }
+    it { should belong_to(:treatment) }
 
     end
 
